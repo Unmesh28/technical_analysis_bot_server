@@ -15,6 +15,9 @@ const { verifyController } = require("./controllers/checkout");
 	// for rest of the application
 	app.use(express.json());
 	app.use("/api/checkout", require("./routes/checkout"));
+	app.get("/", (req, res) => {
+		res.send("Hello!");
+	});
 
 	await new Promise((resolve) => app.listen(port, resolve));
 	console.log(`starting app on port ${port}`);
